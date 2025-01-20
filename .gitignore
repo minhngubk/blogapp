@@ -1,0 +1,15 @@
+.vs/
+src/VinodNair.Blog.Application/obj/
+src/VinodNair.Blog.Domain/bin/
+src/VinodNair.Blog.Domain/obj/
+src/VinodNair.Blog.Infrastructure/bin/
+src/VinodNair.Blog.Infrastructure/obj/
+src/VinodNair.Blog.Web/bin/
+*.user
+src/VinodNair.Blog.Web/.config/
+src/VinodNair.Blog.Web/obj/
+tests/VinodNair.Blog.Infrastructure.Tests/bin/
+tests/VinodNair.Blog.Infrastructure.Tests/obj/
+src/VinodNair.Blog.Application/bin/
+src/VinodNair.Blog.Application.Contracts/obj/
+src/VinodNair.Blog.Application.Contracts/bin/

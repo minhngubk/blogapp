@@ -1,0 +1,90 @@
+﻿@model List<VinodNair.Blog.Application.Contracts.Dtos.BlogPostDto>
+
+@{
+}
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1> @(User.IsInRole("Admin") ? "All Blog Posts" : "My Blog Posts")</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="mb-3 d-flex justify-content-end">
+        <a class="btn btn-dark" asp-area=""
+           asp-controller="AdminBlogPosts"
+           asp-action="Add">
+            Create Blog
+        </a>
+    </div>
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Status</td>
+                    <td>Created Date</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var blogPost in Model)
+                {
+                    <tr>
+                        <td>@blogPost.Title</td>
+                        <td>@blogPost.Status</td>
+                        <td>@blogPost.CreatedDate</td>
+                        <td>
+
+                            <div class="btn-group">
+                                @if (blogPost.Status == VinodNair.Blog.Domain.Enums.BlogStatus.Draft)
+                                {
+                                    <div class="col-md-4">
+                                        <a class="btn btn-link" asp-area=""
+                                           asp-controller="AdminBlogPosts"
+                                           asp-action="Edit"
+                                           asp-route-id="@blogPost.Id">
+                                            Edit
+                                        </a>
+                                    </div>
+                                }
+                                @if (User.IsInRole("Admin") && blogPost.Status == VinodNair.Blog.Domain.Enums.BlogStatus.Draft)
+
+                                {
+                                    <div class="col-md-6">
+                                        <form method="post"
+                                              asp-controller="AdminBlogPosts"
+                                              asp-action="Approve"
+                                              asp-route-id="@blogPost.Id">
+                                            <button class="btn btn-success ms-2" type="submit">Approve</button>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form method="post"
+                                              asp-controller="AdminBlogPosts"
+                                              asp-action="Reject"
+                                              asp-route-id="@blogPost.Id">
+                                            <button class="btn btn-danger ms-2" type="submit">
+                                                <i class="fa fa-close"></i>
+                                                Reject
+                                            </button>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Blog Posts Found!</p>
+    }
+
+</div>

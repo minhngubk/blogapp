@@ -1,0 +1,13 @@
+﻿@if (!string.IsNullOrEmpty((string?)ViewData["ErrorMessage"]))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+
+@if (!string.IsNullOrEmpty((string?)ViewData["SuccessMessage"]))
+{
+    <div class="alert alert-success" role="alert">
+        @ViewData["SuccessMessage"]
+    </div>
+}
