@@ -48,10 +48,12 @@ Follow these steps to kickstart system:
 4. Set up a database and configure the connection string in the `appsettings.json` file.
 5. Build and run the project:
 	dotnet build
-	dotnet run
 6. Init database & seed data:
-	cd src
-	dotnet ef database update --context BlogDbContext --project VinodNair.Blog.Infrastructure --startup-project VinodNair.Blog.Web 
+    Install dotnet ef if you haven't installed it yet
+		dotnet tool install --global dotnet-ef --version 8.0.0
+	Next, following the steps to init db & seed data
+		cd src
+		dotnet ef database update --context BlogDbContext --project VinodNair.Blog.Infrastructure --startup-project VinodNair.Blog.Web 
 	
 7. Launch the application using Visual Studio.
 8. See the results
