@@ -56,7 +56,10 @@ Follow these steps to kickstart system:
 		dotnet ef database update --context BlogDbContext --project VinodNair.Blog.Infrastructure --startup-project VinodNair.Blog.Web 
 	
 7. Launch the application using Visual Studio.
-8. See the results
+    Set project VinodNair.Blog.Web as startup project
+8. Using follows account to log in to the system
+    Admin account : vinodnair@Blog.com/Admin@123
+	Editor account : editor@Blog.com/Editor@123
 
 ## Technologies
 
