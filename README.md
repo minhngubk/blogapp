@@ -53,7 +53,7 @@ Follow these steps to kickstart system:
     Install dotnet ef if you haven't installed it yet
 		dotnet tool install --global dotnet-ef --version 8.*
 		
-	Next, following the steps to init db & seed data
+    Next, following the steps :
 		cd src
 		dotnet ef database update --context BlogDbContext --project VinodNair.Blog.Infrastructure --startup-project VinodNair.Blog.Web 
 	
